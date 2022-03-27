@@ -8,10 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   newMemberName = "";
   members: string[] = [];
+  errorMessage = ""
 
   addMember() {
-     this.members.push(this.newMemberName) 
-     this.newMemberName = ""
+
+    if(!this.newMemberName){
+      this.errorMessage = "Name cannot be empty!"
+      return;
+    }
+    this.errorMessage = ""
+    this.members.push(this.newMemberName) 
+    this.newMemberName = ""
   }
 
   onInput(member: string){
