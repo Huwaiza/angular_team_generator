@@ -9,8 +9,8 @@
       <button (click)="addMember()">Add</button>
     </div>
     <div class="generate-teams-container">
-      <input type="text" placeholder="# of teams"/>
-      <button>Generate</button>
+      <input #numOfTeams type="number" placeholder="# of teams" (input)="onNumberTeamInput(numOfTeams.value)" [value]="numberOfTeams"/>
+      <button (click)="generateTeams()">Generate</button>
     </div>
     <p *ngIf="errorMessage" class="error-msg">{{errorMessage}}</p>
   </div>
