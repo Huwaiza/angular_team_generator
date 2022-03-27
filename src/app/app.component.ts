@@ -35,10 +35,15 @@ export class AppComponent {
       this.errorMessage = "Please enter postive digit for number of teams"
       return;
     }
+    if(this.members.length < this.numberOfTeams){
+      this.errorMessage = "Not Enough members"
+      return;
+    }
     const allMembers = [...this.members]
     this.errorMessage  = ""
 
     while(allMembers.length){
+
       for (let i = 0; i < this.numberOfTeams; i++){
         const randomIndex = Math.floor(Math.random() * allMembers.length)
         const member = allMembers.splice(randomIndex, 1)[0]
@@ -52,5 +57,7 @@ export class AppComponent {
       }
     }
     console.log(this.teams)
+    this.members = [];
+    this.numberOfTeams = "";
   }
 }
