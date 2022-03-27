@@ -5,7 +5,7 @@
       <li *ngFor="let memberName of members">{{memberName}}</li>    
     </ul>
     <div class="add-members-container">
-      <input #newMember type="text" placeholder="Enter Name" name="newMember" (input)="onInput(newMember.value)"/>
+      <input #newMember type="text" placeholder="Enter Name" [value]="newMemberName" (input)="onInput(newMember.value)"/>
       <button (click)="addMember()">Add</button>
     </div>
     <div class="generate-teams-container">
