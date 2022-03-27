@@ -9,8 +9,8 @@
       <li>Rachel Zane</li>    
     </ul>
     <div class="add-members-container">
-      <input type="text" placeholder="Enter Name"/>
-      <button>Add</button>
+      <input #newMember type="text" placeholder="Enter Name" name="newMember" (input)="onInput(newMember.value)"/>
+      <button (click)="addMember()">Add</button>
     </div>
     <div class="generate-teams-container">
       <input type="text" placeholder="# of teams"/>
