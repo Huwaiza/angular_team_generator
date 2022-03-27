@@ -2,11 +2,7 @@
   <div class="ui card">
     <h1>Team Generator</h1>
     <ul class="list">
-      <li>Huwaiza Tahir</li>
-      <li>Vincent</li>
-      <li>Harvey Spector</li>
-      <li>Mike Ross</li>
-      <li>Rachel Zane</li>    
+      <li *ngFor="let memberName of members">{{memberName}}</li>    
     </ul>
     <div class="add-members-container">
       <input #newMember type="text" placeholder="Enter Name" name="newMember" (input)="onInput(newMember.value)"/>
